@@ -14,12 +14,12 @@ ventana.resizable(0,0)
 ventana.config(bg = "#566573")
 ventana.iconbitmap("C:/Users/Angelica Gerrero/Desktop/LenguajesDeProgramacion/Icon/Imagenes/ai.ico")
 
-# Variablesp
+# Variables
 
 opcion = tk.IntVar()
 url = ""
 
-openai.api_key = "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"
+openai.api_key = "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"
 modelo = "gpt-3.5-turbo"
 
 # Funciones
@@ -35,14 +35,14 @@ def Modelo():
 		{"role":"user", "content": pregunta}
 	]
 
-	respuesta = openai.ChatCompletion.create(
+	respuesta = openai.chat.completions.create(
 		model = modelo,
 		messages = mensajes,
 		temperature = 1,
 		max_tokens = 1000
 	)
 
-	caja_de_chat.insert(tk.END, "\nModelo: " + respuesta["choices"][0]["message"]["content"])
+	caja_de_chat.insert(tk.END, "\nModelo: " + respuesta.choices[0].message.content)
 
 def Dalle():
 
@@ -53,13 +53,13 @@ def Dalle():
 	HistorialDePreguntas()
 	barra_preguntas.delete("1.0", tk.END)
 
-	imagen = openai.Image.create(
+	imagen = openai.images.generate(
 		prompt = prompt_imagen,
 		n = 1,
 		size = "1024x1024"
 	)
 
-	url_imagen = imagen["data"][0]["url"]
+	url_imagen = imagen.data[0].url
 	foto = requests.get(url_imagen, stream = True)
 
 	# Guardar
@@ -84,9 +84,12 @@ def Whisper():
 	caja_de_preguntas.insert(tk.END, "\nPregunta: " + url)
 
 	with open(url, "rb") as audio:
-		transcripcion = openai.Audio.transcribe("whisper-1", audio)
+		transcripcion = openai.audio.transcriptions.create(
+			model = "whisper-1", 
+			file = audio
+		)
 
-	transcripcion = transcripcion["text"]
+	transcripcion = transcripcion.text
 	caja_de_chat.insert(tk.END, "\n\nModelo: " + f"\nTranscripcion: \n{transcripcion}")
 
 def NuevoChat():
@@ -98,12 +101,12 @@ def NuevoChat():
 def HistorialDePreguntas():
 	caja_de_preguntas.insert(tk.END, "\nPregunta: " + barra_preguntas.get("1.0", tk.END))
 
-def Enviar():
-	
-	caja_de_chat.insert(tk.END, "\n\nTu: " + barra_preguntas.get("1.0", tk.END))
-	HistorialDePreguntas()
-	Modelo()
-	barra_preguntas.delete("1.0", tk.END)
+def Enviar(event = None):
+    caja_de_chat.insert(tk.END, "\n\nTu: " + barra_preguntas.get("1.0", tk.END))
+
+    HistorialDePreguntas()
+    barra_preguntas.delete("1.0", tk.END)
+    Modelo()
 
 # Marco de fondo
 
@@ -147,10 +150,12 @@ caja_de_chat = scrolledtext.ScrolledText(ventana, wrap = tk.WORD, yscrollcommand
 caja_de_chat.place(x = 248, y = 50)
 scrollbar.config(command = caja_de_chat.yview)
 
-# Barra de preguntas
+# Barra de preguntas  
 
 barra_preguntas = tk.Text(ventana, wrap = tk.WORD, bg = "#5D6D7E", fg = "white", width = 92, height = 3)
 barra_preguntas.place(x = 248, y = 430)
+
+barra_preguntas.bind("<Return>", Enviar)
 
 tk.Button(ventana, text = "Enviar", bg = "#5D6D7E", fg = "white", 
 	width = 10, height = 3, command = Enviar).place(x = 990, y = 430)
