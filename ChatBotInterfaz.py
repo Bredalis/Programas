@@ -19,7 +19,7 @@ ventana.iconbitmap("C:/Users/Angelica Gerrero/Desktop/LenguajesDeProgramacion/Ic
 opcion = tk.IntVar()
 url = ""
 
-openai.api_key = "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"
+openai.api_key = "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"
 modelo = "gpt-3.5-turbo"
 
 # Funciones
@@ -27,7 +27,7 @@ modelo = "gpt-3.5-turbo"
 def Modelo():
 
 	# contexto = input("Ingrese el contexto del modelo: ")
-	contexto = "dame una respuesta clara"
+	contexto = "eres un experto en programacion"
 	pregunta = barra_preguntas.get("1.0", tk.END)
 
 	mensajes = [
