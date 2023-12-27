@@ -1,20 +1,20 @@
 
 import requests
 
-print("Este es un programa para descargar imagenes de tipo .png, .jpg y .gift")
+print('Este es un programa para descargar imagenes de tipo .png, .jpg y .gift')
 
-URL = input("Ingrese la url: ")
-Nombre = input("Ingrese el nombre de la imagen: ")
-Tipo = input("Ingrese el tipo de imagen que quiere: ")
+url = input('Ingrese la url: ')
+nombre = input('Ingrese el nombre de la imagen: ')
+tipo = input('Ingrese el tipo de imagen que quiere: ')
 
-def Descargar_Imagen(URL, Nombre, Tipo):
+def descargar_imagen(url, nombre, tipo):
 
-	Ruta = "C:/Users/Angelica Gerrero/Desktop/LenguajesDeProgramacion/Icon/Imagenes/"
+	ruta = 'C:/Users/Angelica Gerrero/Desktop/LenguajesDeProgramacion/Icon/Imagenes/'
 
-	Concatenacion = Ruta + Nombre + Tipo
-	Imagen = requests.get(URL).content
+	concatenacion = ruta + nombre + tipo
+	imagen = requests.get(url).content
 
-	with open(Concatenacion, "wb") as Archivo:
-		Archivo.write(Imagen)
+	with open(concatenacion, 'wb') as archivo:
+		archivo.write(imagen)
 
-Descargar_Imagen(URL, Nombre, Tipo)
+descargar_imagen(url, nombre, tipo)

@@ -2,246 +2,246 @@
 import tkinter as tk
 import math
 
-Ventana = tk.Tk()
-Ventana.geometry('245x245') 
-Ventana.title("CALCULATOR")
-Ventana.resizable(0,0)
-Ventana.config(bg = "white")
+ventana = tk.Tk()
+ventana.geometry('245x245') 
+ventana.title('CALCULATOR')
+ventana.resizable(0,0)
+ventana.config(bg = 'white')
 
-Ventana.iconbitmap('C:/Users/Angelica Gerrero/Desktop/LenguajesDeProgramacion/Icon/Imagenes/Calculadora.ico')
+ventana.iconbitmap('C:/Users/Angelica Gerrero/Desktop/LenguajesDeProgramacion/Icon/Imagenes/calculadora.ico')
 
-Contenido = open('Manual.txt', 'r').read()
-exec(Contenido)
+contenido = open('Manual.txt', 'r').read()
+exec(contenido)
 
-def Clean():
-	Mi_Entry.delete(0, tk.END)
+def clean():
+	mi_entry.delete(0, tk.END)
 
-def Reclick(Valor):
+def reclick(valor):
 	
-	Anterior = Mi_Entry.get()
+	Anterior = mi_entry.get()
 
-	Mi_Entry.delete(0, tk.END)
-	Mi_Entry.insert(0, str(Anterior + str(Valor)))
+	mi_entry.delete(0, tk.END)
+	mi_entry.insert(0, str(Anterior + str(valor)))
 
-def Binario():
+def binario():
 
-	global Numero_1
-	global Operacion
+	global numero_1
+	global operacion
 
-	Numero_1 = Mi_Entry.get()
-	Numero_1 = int(Numero_1)
+	numero_1 = mi_entry.get()
+	numero_1 = int(numero_1)
 
-	Operacion = 'B'
+	operacion = 'B'
 
-def Suma():
+def suma():
 
-    global Numero_1
-    global Operacion
+    global numero_1
+    global operacion
 
-    Numero_1 = Mi_Entry.get()
-    Numero_1 = float(Numero_1)
+    numero_1 = mi_entry.get()
+    numero_1 = float(numero_1)
 
-    Mi_Entry.delete(0, tk.END)
+    mi_entry.delete(0, tk.END)
 
-    Operacion = '+'
+    operacion = '+'
 
-def Resta():
+def resta():
 
-	global Numero_1 
-	global Operacion
+	global numero_1 
+	global operacion
 
-	Numero_1 = Mi_Entry.get()
-	Numero_1 = float(Numero_1)
+	numero_1 = mi_entry.get()
+	numero_1 = float(numero_1)
 
-	Mi_Entry.delete(0, tk.END)
+	mi_entry.delete(0, tk.END)
 
-	Operacion = '-'
+	operacion = '-'
 
-def Multiplicacion():
+def multiplicacion():
 
-	global Numero_1
-	global Operacion
+	global numero_1
+	global operacion
 
-	Numero_1 = Mi_Entry.get()
-	Numero_1 = float(Numero_1)
+	numero_1 = mi_entry.get()
+	numero_1 = float(numero_1)
 
-	Mi_Entry.delete(0, tk.END)
+	mi_entry.delete(0, tk.END)
 
-	Operacion = '*'
+	operacion = '*'
 
-def Division():
+def division():
 
-	global Numero_1
-	global Operacion
+	global numero_1
+	global operacion
 
-	Numero_1 = Mi_Entry.get()
-	Numero_1 = float(Numero_1)
+	numero_1 = mi_entry.get()
+	numero_1 = float(numero_1)
 
-	Mi_Entry.delete(0, tk.END)
+	mi_entry.delete(0, tk.END)
 
-	Operacion = '/'
+	operacion = '/'
 
 def Potencia():
 
-	global Numero_1
-	global Operacion
+	global numero_1
+	global operacion
 
-	Numero_1 = Mi_Entry.get()
-	Numero_1 = float(Numero_1)
+	numero_1 = mi_entry.get()
+	numero_1 = float(numero_1)
 
-	Mi_Entry.delete(0, tk.END)
+	mi_entry.delete(0, tk.END)
 
-	Operacion = '^'
+	operacion = '^'
 
-def Radicacion():
+def radicacion():
 
-	global Numero_1
-	global Operacion
+	global numero_1
+	global operacion
 
-	Numero_1 = Mi_Entry.get()
-	Numero_1 = int(Numero_1)
+	numero_1 = mi_entry.get()
+	numero_1 = int(numero_1)
 
-	Operacion = '√'
+	operacion = '√'
 	
-def Resultado():
+def resultado():
 
-	global Numero_2
+	global numero_2
 	
-	Numero_2 = Mi_Entry.get()
-	Numero_2 = float(Numero_2)
+	numero_2 = mi_entry.get()
+	numero_2 = float(numero_2)
 
-	Mi_Entry.delete(0, tk.END)
+	mi_entry.delete(0, tk.END)
 
-	if Operacion == '+' :
+	if operacion == '+' :
 
-		Mi_Entry.insert(0, Numero_1 + Numero_2)
+		mi_entry.insert(0, numero_1 + numero_2)
 
-	if Operacion == '-' :
+	if operacion == '-' :
 
-		Mi_Entry.insert(0, Numero_1 - Numero_2)
+		mi_entry.insert(0, numero_1 - numero_2)
 
-	if Operacion == '*' :
+	if operacion == '*' :
 
-		Mi_Entry.insert(0, Numero_1 * Numero_2)
+		mi_entry.insert(0, numero_1 * numero_2)
 
-	if Operacion == '^' :
+	if operacion == '^' :
 		
-		Mi_Entry.insert(0, Numero_1 ** Numero_2)
+		mi_entry.insert(0, numero_1 ** numero_2)
 
-	if Operacion == 'B':
+	if operacion == 'B':
 
-		Mi_Entry.insert(0, bin(Numero_1)[2:])
+		mi_entry.insert(0, bin(numero_1)[2:])
 
-	if Operacion == '/':
+	if operacion == '/':
 
 		try:
 
-			Mi_Entry.insert(0, Numero_1 / Numero_2)
+			mi_entry.insert(0, numero_1 / numero_2)
 
 		except ZeroDivisionError:
 
-			Mi_Entry.insert(0, "Error")
+			mi_entry.insert(0, 'Error')
 
-	if Operacion == '√':
+	if operacion == '√':
 
-		Mi_Entry.insert(0, math.sqrt(Numero_1))
+		mi_entry.insert(0, math.sqrt(numero_1))
 
-Condicion = True
-Texto = tk.IntVar().set("")
-Numero_1 = ""
-Numero_2 = ""
-Operacion = ""
+condicion = True
+texto = tk.IntVar().set('')
+numero_1 = ''
+numero_2 = ''
+operacion = ''
 
-Mi_Entry = tk.Entry(Ventana, textvariable = Texto, width = 40, justify = 'right', bg = "white")
-Mi_Entry.grid(column = 0, row = 0, columnspan = 5)
+mi_entry = tk.Entry(ventana, textvariable = texto, width = 40, justify = 'right', bg = 'white')
+mi_entry.grid(column = 0, row = 0, columnspan = 5)
 
-tk.Button(Ventana, text = '1', bg = '#A569BD', cursor = 'hand2', width = 5, activebackground = 'pink', command = lambda: Reclick(1)).grid(column = 1, row = 1, pady = 10)
-tk.Button(Ventana, text = '2', bg = '#A569BD', cursor = 'hand2', width = 5, activebackground = 'pink', command = lambda: Reclick(2)).grid(column = 2, row = 1, pady = 10)
-tk.Button(Ventana, text = '3', bg = '#A569BD', cursor = 'hand2', width = 5, activebackground = 'pink', command = lambda: Reclick(3)).grid(column = 3, row = 1, pady = 10)
+tk.Button(ventana, text = '1', bg = '#A569BD', cursor = 'hand2', width = 5, activebackground = 'pink', command = lambda: reclick(1)).grid(column = 1, row = 1, pady = 10)
+tk.Button(ventana, text = '2', bg = '#A569BD', cursor = 'hand2', width = 5, activebackground = 'pink', command = lambda: reclick(2)).grid(column = 2, row = 1, pady = 10)
+tk.Button(ventana, text = '3', bg = '#A569BD', cursor = 'hand2', width = 5, activebackground = 'pink', command = lambda: reclick(3)).grid(column = 3, row = 1, pady = 10)
 
-tk.Button(Ventana, text = '4', bg = '#A569BD', cursor = 'hand2', width = 5, activebackground = 'pink', command = lambda: Reclick(4)).grid(column = 1, row = 2, pady = 10)
-tk.Button(Ventana, text = '5', bg = '#A569BD', cursor = 'hand2', width = 5, activebackground = 'pink', command = lambda: Reclick(5)).grid(column = 2, row = 2, pady = 10)
-tk.Button(Ventana, text = '6', bg = '#A569BD', cursor = 'hand2', width = 5, activebackground = 'pink', command = lambda: Reclick(6)).grid(column = 3, row = 2, pady = 10)
+tk.Button(ventana, text = '4', bg = '#A569BD', cursor = 'hand2', width = 5, activebackground = 'pink', command = lambda: reclick(4)).grid(column = 1, row = 2, pady = 10)
+tk.Button(ventana, text = '5', bg = '#A569BD', cursor = 'hand2', width = 5, activebackground = 'pink', command = lambda: reclick(5)).grid(column = 2, row = 2, pady = 10)
+tk.Button(ventana, text = '6', bg = '#A569BD', cursor = 'hand2', width = 5, activebackground = 'pink', command = lambda: reclick(6)).grid(column = 3, row = 2, pady = 10)
 
-tk.Button(Ventana, text = '7', bg = '#A569BD', cursor = 'hand2', width = 5, activebackground = 'pink', command = lambda: Reclick(7)).grid(column = 1, row = 3, pady = 10)
-tk.Button(Ventana, text = '8', bg = '#A569BD', cursor = 'hand2', width = 5, activebackground = 'pink', command = lambda: Reclick(8)).grid(column = 2, row = 3, pady = 10)
-tk.Button(Ventana, text = '9', bg = '#A569BD', cursor = 'hand2', width = 5, activebackground = 'pink', command = lambda: Reclick(9)).grid(column = 3, row = 3, pady = 10)
+tk.Button(ventana, text = '7', bg = '#A569BD', cursor = 'hand2', width = 5, activebackground = 'pink', command = lambda: reclick(7)).grid(column = 1, row = 3, pady = 10)
+tk.Button(ventana, text = '8', bg = '#A569BD', cursor = 'hand2', width = 5, activebackground = 'pink', command = lambda: reclick(8)).grid(column = 2, row = 3, pady = 10)
+tk.Button(ventana, text = '9', bg = '#A569BD', cursor = 'hand2', width = 5, activebackground = 'pink', command = lambda: reclick(9)).grid(column = 3, row = 3, pady = 10)
 
-tk.Button(Ventana, text = '0', bg = '#A569BD', cursor  = 'hand2', width = 5, activebackground = 'pink', command = lambda: Reclick(0)).grid (column = 1, row = 4, pady = 10)
-tk.Button(Ventana, text = '+', bg = '#A569BD', cursor = 'hand2', width = 5, activebackground = 'pink', command = Suma).grid(column = 4, row = 1, pady = 10)
-tk.Button(Ventana, text = 'x', bg = '#A569BD', cursor = 'hand2', width = 5, activebackground = 'pink',command = Multiplicacion).grid(column = 4, row = 2, pady = 10)
+tk.Button(ventana, text = '0', bg = '#A569BD', cursor  = 'hand2', width = 5, activebackground = 'pink', command = lambda: reclick(0)).grid (column = 1, row = 4, pady = 10)
+tk.Button(ventana, text = '+', bg = '#A569BD', cursor = 'hand2', width = 5, activebackground = 'pink', command = suma).grid(column = 4, row = 1, pady = 10)
+tk.Button(ventana, text = 'x', bg = '#A569BD', cursor = 'hand2', width = 5, activebackground = 'pink',command = multiplicacion).grid(column = 4, row = 2, pady = 10)
 
-tk.Button(Ventana, text = '÷', bg = '#A569BD', cursor = 'hand2', width = 5, activebackground = 'pink', command = Division).grid(column = 3, row = 4, pady = 10)
-tk.Button(Ventana, text = '-', bg = '#A569BD', cursor = 'hand2', width = 5, activebackground = 'pink', command = Resta).grid(column = 4, row = 3, pady = 10)
-tk.Button(Ventana, text = 'π', bg = '#A569BD', cursor  = 'hand2', width = 5, activebackground = 'pink', command = lambda: Reclick(math.pi)).grid(column = 2, row = 4, pady = 10)
-tk.Button(Ventana, text = '=', bg = '#A569BD', cursor = 'hand2', width = 5, activebackground = 'pink', command = Resultado).grid(column = 4, row = 4, pady = 10)
+tk.Button(ventana, text = '÷', bg = '#A569BD', cursor = 'hand2', width = 5, activebackground = 'pink', command = division).grid(column = 3, row = 4, pady = 10)
+tk.Button(ventana, text = '-', bg = '#A569BD', cursor = 'hand2', width = 5, activebackground = 'pink', command = resta).grid(column = 4, row = 3, pady = 10)
+tk.Button(ventana, text = 'π', bg = '#A569BD', cursor  = 'hand2', width = 5, activebackground = 'pink', command = lambda: reclick(math.pi)).grid(column = 2, row = 4, pady = 10)
+tk.Button(ventana, text = '=', bg = '#A569BD', cursor = 'hand2', width = 5, activebackground = 'pink', command = resultado).grid(column = 4, row = 4, pady = 10)
 
-tk.Button(Ventana, text = 'B', bg = '#A569BD', cursor = 'hand2', width = 5, activebackground = 'pink', command = Binario).grid(column = 1, row = 5, pady = 10)
-tk.Button(Ventana, text = '√', bg = '#A569BD', cursor  = 'hand2', width = 5, activebackground = 'pink', command = Radicacion).grid(column = 2, row = 5, pady = 10)
-tk.Button(Ventana, text = '⌦', bg = '#A569BD', cursor  = 'hand2', width = 5, activebackground = 'pink', command = Clean).grid(column = 3, row = 5, pady = 10)
-tk.Button(Ventana, text = '^', bg = '#A569BD', cursor = 'hand2', width = 5, activebackground = 'pink', command = Potencia).grid(column = 4, row = 5, pady = 10)
+tk.Button(ventana, text = 'B', bg = '#A569BD', cursor = 'hand2', width = 5, activebackground = 'pink', command = binario).grid(column = 1, row = 5, pady = 10)
+tk.Button(ventana, text = '√', bg = '#A569BD', cursor  = 'hand2', width = 5, activebackground = 'pink', command = radicacion).grid(column = 2, row = 5, pady = 10)
+tk.Button(ventana, text = '⌦', bg = '#A569BD', cursor  = 'hand2', width = 5, activebackground = 'pink', command = clean).grid(column = 3, row = 5, pady = 10)
+tk.Button(ventana, text = '^', bg = '#A569BD', cursor = 'hand2', width = 5, activebackground = 'pink', command = Potencia).grid(column = 4, row = 5, pady = 10)
 
-class Cerrar():
+class cerrar():
 
-    def __init__(self, Herencia):
+    def __init__(self, herencia):
 
-        self.X = tk.Toplevel(Herencia)
-        self.X.title("Salir")
+        self.x = tk.Toplevel(herencia)
+        self.x.title('Salir')
 
-        self.Herencia = Herencia
+        self.herencia = herencia
         
-        tk.Label(self.X, text = "¿Quieres cambiar de color?").grid(row = 0, column = 0, columnspan = 2)
+        tk.Label(self.x, text = '¿Quieres cambiar de color?').grid(row = 0, column = 0, columnspan = 2)
 
-        self.Si = tk.Button(self.X, text = "Si", activebackground = 'pink', command = self.Color)
-        self.Si.grid(row = 1, column = 0, padx = 5, pady = 5)
+        self.si = tk.Button(self.x, text = 'Si', activebackground = 'pink', command = self.color)
+        self.si.grid(row = 1, column = 0, padx = 5, pady = 5)
 
-        self.No = tk.Button(self.X, text = "No", activebackground = 'pink', command = self.Salir)        
-        self.No.grid(row = 1, column = 1, padx = 5, pady = 5)
+        self.no = tk.Button(self.x, text = 'No', activebackground = 'pink', command = self.salir)        
+        self.no.grid(row = 1, column = 1, padx = 5, pady = 5)
 
-    def Color(self):
+    def color(self):
         
 
-    	global Condicion
+    	global condicion
 
-    	if Condicion:
+    	if condicion:
 
-    		Ventana.config(bg = "black")
+    		ventana.config(bg = 'black')
 
-    		Mi_Entry.config(bg = "black")
-    		Mi_Entry.config(fg = "white")
+    		mi_entry.config(bg = 'black')
+    		mi_entry.config(fg = 'white')
 
-    		Condicion = False
+    		condicion = False
 
     	else:
 
-    		Ventana.config(bg = "white")
-    		Mi_Entry.config(bg = "white")
-    		Mi_Entry.config(fg = "black")
+    		ventana.config(bg = 'white')
+    		mi_entry.config(bg = 'white')
+    		mi_entry.config(fg = 'black')
 
-    		Condicion = True    	
+    		condicion = True    	
 
-    def Salir(self):
+    def salir(self):
 
-        self.X.destroy()
-        self.Herencia.destroy()
+        self.x.destroy()
+        self.herencia.destroy()
 
-class Calculadora():
+class calculadora():
 
-    def __init__(self, Herencia):
+    def __init__(self, herencia):
 
-        self.Herencia = Herencia
-        self.Herencia.protocol("WM_DELETE_WINDOW", self.Al_Cerrar)
+        self.herencia = herencia
+        self.herencia.protocol('WM_DELETE_WINDOW', self.Al_Cerrar)
 
     def Al_Cerrar(self):
 
-        Clase = Cerrar(Ventana)
+        clase = cerrar(ventana)
 
-        self.Herencia.wait_window(Clase.X)
+        self.herencia.wait_window(clase.x)
 
-if __name__ == "__main__":
+if __name__ == '__main__':
 
-    Clase = Calculadora(Ventana)
+    clase = calculadora(ventana)
 
-Manual('Manual_Calculadora.txt')
+manual('Manual_Calculadora.txt')
 
-Ventana.mainloop()
+ventana.mainloop()

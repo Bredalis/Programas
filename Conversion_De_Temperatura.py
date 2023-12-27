@@ -1,31 +1,31 @@
 
-def Conversion():
+def conversion():
 
-	print("Este es un programa capas de convertir de una temperatura a otra")
+	print('Este es un programa capas de convertir de una temperatura a otra')
 
-	Conversiones = ["C a K", "C a F", "K a C", "K a F", "F a C", "F a K"]
+	conversiones = ['C a K', 'C a F', 'K a C', 'K a F', 'F a C', 'F a K']
 
-	print(f"Estas son las conversiones: {Conversiones}")
+	print(f'Estas son las conversiones: {conversiones}')
 
-	Eleccion = int(input("Ingrese el tipo de conversion que desea (Por numeros del 0 al 5): "))
-	Numero = int(input("Ingrese el numero que quiere convertir: "))
+	eleccion = int(input('Ingrese el tipo de conversion que desea (Por numeros del 0 al 5): '))
+	numero = int(input('Ingrese el numero que quiere convertir: '))
 
-	if Eleccion == 0:
-		print(f"Celsius a Kelvin = {Numero + 273.15} ")
+	if eleccion == 0:
+		print(f'Celsius a Kelvin = {numero + 273.15} ')
 
-	elif Eleccion == 1:
-		print(f"Celsius a Fahrenheit = {(Numero * 9/5) + 32}")
+	elif eleccion == 1:
+		print(f'Celsius a Fahrenheit = {(numero * 9 / 5) + 32}')
 
-	elif Eleccion == 2:
-		print(f"Kelvin a Celsius = {Numero - 273.15}")
+	elif eleccion == 2:
+		print(f'Kelvin a Celsius = {numero - 273.15}')
 
-	elif Eleccion == 3:
-		print(f"Kelvin a Fahrenheit = {(Numero - 273.15) * 9/5 + 32}")
+	elif eleccion == 3:
+		print(f'Kelvin a Fahrenheit = {(numero - 273.15) * 9 / 5 + 32}')
 
-	elif Eleccion == 4:
-		print(f"Fahrenheit a Celsius = {(Numero - 32) * 5/9}")
+	elif eleccion == 4:
+		print(f'Fahrenheit a Celsius = {(numero - 32) * 5 / 9}')
 
-	elif Eleccion == 5:
-		print(f"Fahrenheit a Kelvin = {(Numero - 32) * 5/9 + 273.15}")
+	elif eleccion == 5:
+		print(f'Fahrenheit a Kelvin = {(numero - 32) * 5 / 9 + 273.15}')
 
-Conversion()
+conversion()

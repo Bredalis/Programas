@@ -3,92 +3,91 @@ import tkinter as tk
 from PIL import Image, ImageTk
 from tkinter import filedialog
 
-Foto = ""
+foto = ''
 
-Contenido = open('Manual.txt', 'r').read()
+contenido = open('Manual.txt', 'r').read()
+exec(contenido)
 
-exec(Contenido)
+def abrir_imagen():
 
-def Abrir_Imagen():
+    ventana = tk.Tk()
+    ventana.title('Imagen')
+    ventana.resizable(0,0)
+    ventana.iconbitmap('C:/Users/Angelica Gerrero/Desktop/LenguajesDeProgramacion/Icon/Imagenes/Camara_2.ico')
 
-    Ventana = tk.Tk()
-    Ventana.title("Imagen")
-    Ventana.resizable(0,0)
-    Ventana.iconbitmap("C:/Users/Angelica Gerrero/Desktop/LenguajesDeProgramacion/Icon/Imagenes/Camara_2.ico")
-
-    global Foto
+    global foto
 
     try:
 
-        Folder = filedialog.askopenfilename(title = "Open", initialdir = "C:", 
-            filetypes = (("Icon", "*.png"), ("Icon", "*.ico"), ("Icon", "*.jpg")))
+        folder = filedialog.askopenfilename(title = 'Open', initialdir = 'C:', 
+            filetypes = (('Icon', '*.png'), ('Icon', '*.ico'), ('Icon', '*.jpg')))
 
-        Img = Image.open(Folder)
+        img = Image.open(folder)
 
-        Foto = ImageTk.PhotoImage(Img)
+        foto = ImageTk.PhotoImage(img)
 
-        Etiqueta = tk.Label(Ventana, image = Foto)
-        Etiqueta.pack()
+        etiqueta = tk.Label(ventana, image = foto)
+        etiqueta.pack()
 
         class Cerrar:
 
-            def __init__(self, Herencia):
+            def __init__(self, herencia):
 
-                self.X = tk.Toplevel(Herencia)
-                self.X.title("Salir")
+                self.x = tk.Toplevel(herencia)
+                self.x.title('salir')
 
-                self.Herencia = Herencia
+                self.herencia = herencia
                 
-                tk.Label(self.X, text = "¿Quieres abrir otra?").grid(row = 0, column = 0, columnspan = 2)
+                tk.Label(self.x, text = '¿Quieres abrir otra?').grid(row = 0, column = 0, columnspan = 2)
 
-                self.Si = tk.Button(self.X, text = "Si", activebackground = "skyblue", command = self.Salir)
-                self.Si.grid(row = 1, column = 0, padx = 5, pady = 5)
+                self.si = tk.Button(self.x, text = 'Si', activebackground = 'skyblue', command = self.salir)
+                self.si.grid(row = 1, column = 0, padx = 5, pady = 5)
 
-                self.No = tk.Button(self.X, text = "No", activebackground = "skyblue", command = self.Minimizar)        
-                self.No.grid(row = 1, column = 1, padx = 5, pady = 5)
+                self.no = tk.Button(self.x, text = 'No', activebackground = 'skyblue', command = self.minimizar)        
+                self.no.grid(row = 1, column = 1, padx = 5, pady = 5)
 
-            def Salir(self):
+            def salir(self):
 
-                global Foto
+                global foto
 
                 try:
 
-                    Folder = filedialog.askopenfilename(title = "Open", initialdir = "C:", 
-                        filetypes = (("Icon", "*.png"), ("Icon", "*.ico"), ("Icon", "*.jpg")))
+                    folder = filedialog.askopenfilename(title = 'Open', initialdir = 'C:', 
+                        filetypes = (('Icon', '*.png'), ('Icon', '*.ico'), ('Icon', '*.jpg')))
 
-                    Img = Image.open(Folder)
+                    img = Image.open(folder)
 
-                    Foto = ImageTk.PhotoImage(Img)
+                    foto = ImageTk.PhotoImage(img)
 
-                    Etiqueta.config(image = Foto)
+                    etiqueta.config(image = foto)
 
                 except AttributeError:
-                    print("Ha ocurrido un error")         
+                    print('Ha ocurrido un error')         
 
-            def Minimizar(self):
+            def minimizar(self):
 
-                self.X.destroy()
-                self.Herencia.destroy()
+                self.x.destroy()
+                self.herencia.destroy()
 
-        class Registro:
+        class registro:
 
-            def __init__(self, Herencia):
+            def __init__(self, herencia):
 
-                self.Herencia = Herencia
-                self.Herencia.protocol("WM_DELETE_WINDOW", self.Al_Cerrar)
+                self.herencia = herencia
+                self.herencia.protocol('WM_DELETE_WINDOW', self.al_cerrar)
 
-            def Al_Cerrar(self):
-                Clase = Cerrar(Ventana)
-                self.Herencia.wait_window(Clase.X)
+            def al_cerrar(self):
+                clase = Cerrar(ventana)
+                self.herencia.wait_window(clase.x)
 
-        if __name__ == "__main__":
+        if __name__ == '__main__':
 
-            Clase = Registro(Ventana)
+            clase = registro(ventana)
 
     except Exception: 
-        print("Ocurrio un error")
+        print('Ocurrio un error')
 
-    Ventana.mainloop()
+    ventana.mainloop()
 
-Manual('Manual_Abrir_Imagen.txt')
-Abrir_Imagen()
+manual('Manual_Abrir_Imagen.txt')
+abrir_imagen()

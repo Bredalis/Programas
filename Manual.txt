@@ -1,16 +1,16 @@
 
 import tkinter as tk
 
-def Manual(Archivo):
+def manual(Archivo):
 
-	Descargar_Datos = open(Archivo, 'r', encoding = "utf-8")
-	Contenido = Descargar_Datos.read()
-	Descargar_Datos.close()
+	descargar_datos = open(Archivo, 'r', encoding = "utf-8")
+	contenido = descargar_datos.read()
+	descargar_datos.close()
 
-	Ventana = tk.Tk()
-	Ventana.title("Manual Instructivo")
-	Ventana.resizable(0,0)
+	ventana = tk.Tk()
+	ventana.title("Manual Instructivo")
+	ventana.resizable(0,0)
 
-	tk.Label(Ventana, text = Contenido).pack()
+	tk.Label(ventana, text = contenido).pack()
 
-	Ventana.mainloop()
+	ventana.mainloop()

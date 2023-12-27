@@ -1,21 +1,21 @@
 
-print("Clasificador de notas con valor de 100 puntos")
+print('Clasificador de notas con valor de 100 puntos')
 
 while(True):
 
 	try:
-		Nota = int(input("Nota: "))
+		nota = int(input('Nota: '))
 
-		if Nota >= 90 and Nota <= 100:
-			print("¡Excelente, eres inteligente!")
+		if nota >= 90 and nota <= 100:
+			print('¡Excelente, eres inteligente!')
 
-		elif Nota <= 70:
-			print("Tienes que mejorar")
+		elif nota <= 70:
+			print('Tienes que mejorar')
 
-		elif Nota < 90 and Nota > 70 and Nota < 100:
-			print("¡Muy Bien, eres aplicado!")
+		elif nota < 90 and nota > 70 and nota < 100:
+			print('¡Muy Bien, eres aplicado!')
 
 		break
 
 	except ValueError:
-		print("Solo Numeros")	
+		print('Solo Numeros')	

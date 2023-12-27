@@ -4,49 +4,53 @@
 import random
 
 # Obtener eleccion del usuario
-def Obtener_Opcion_Usuario():
+
+def obtener_opcion_usuario():
 	
-	usuario = input("Elije una (piedra, papel o tijera): ")
+	usuario = input('Elije una (piedra, papel o tijera): ')
 
-	while usuario.lower() not in ["piedra", "papel", "tijera"]:
-		print("Eleccion incorrecta")
+	while usuario.lower() not in ['piedra', 'papel', 'tijera']:
+		print('Eleccion incorrecta')
 
-		usuario = input("Elije una (piedra, papel o tijera): ")
+		usuario = input('Elije una (piedra, papel o tijera): ')
 
 	return usuario
 
 # Obtener eleccion de la maquina
-def Obtener_Opcion_Maquina():
+
+def obtener_opcion_maquina():
 	
-	opciones = ["piedra", "papel", "tijera"]
+	opciones = ['piedra', 'papel', 'tijera']
 	maquina = random.choice(opciones)
 
 	return maquina
 
 # Mostrar el resultado del juego
-def Determinar_Resultado(usuario, maquina):
+
+def determinar_resultado(usuario, maquina):
 
 	if usuario == maquina:
-		return "Empate"
+		return 'Empate'
 
-	elif (usuario == "piedra" and maquina == "tijera") or (usuario == "papel" and maquina == "piedra") or (usuario == "tijera" and maquina == "papel"):
-		return "Ganaste"
+	elif (usuario == 'piedra' and maquina == 'tijera') or (usuario == 'papel' and maquina == 'piedra') or (usuario == 'tijera' and maquina == 'papel'):
+
+		return 'Ganaste'
 
 	else:
-		return "Perdiste :("
-
+		return 'Perdiste :('
 
 # Inicio del juego
-def Juega_Piedra_Papel_Tijera():
 
-	print("Bienvenido al juego contra ordenador de piedra, papel o tijera")
+def juega_piedra_papel_tijera():
 
-	usuario = Obtener_Opcion_Usuario()
-	maquina = Obtener_Opcion_Maquina()
-	resultado = Determinar_Resultado(usuario, maquina)
+	print('Bienvenido al juego contra ordenador de piedra, papel o tijera')
 
-	print("Elejiste", usuario)
-	print("La maquina elijio", maquina)
+	usuario = obtener_opcion_usuario()
+	maquina = obtener_opcion_maquina()
+	resultado = determinar_resultado(usuario, maquina)
+
+	print('Elejiste', usuario)
+	print('La maquina elijio', maquina)
 	print(resultado)
 
-Juega_Piedra_Papel_Tijera()
+juega_piedra_papel_tijera()

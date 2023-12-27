@@ -5,14 +5,15 @@ import winsound
 color = (255, 0, 0)
 grosor = 2
 
-clasificador = cv2.CascadeClassifier("C:/Users/Angelica Gerrero/Desktop/LenguajesDeProgramacion/Python/OpenCV/haarcascade_frontalface_default.xml")
+url = 'C:/Users/Angelica Gerrero/Desktop/LenguajesDeProgramacion/Python/OpenCV/haarcascade_frontalface_default.xml'
+clasificador = cv2.CascadeClassifier(url)
 captura_video = cv2.VideoCapture(0)
 
-print("Clasificador de rostro")
-nombres = ["lisa", "yulissa", "christopher"]
-respuesta = input("Ingrese su nombre para clasificarlo: ")
-respuesta = respuesta.split(",")
-print("Por favor, pongase en el orden de los nombres ingresados")
+print('Clasificador de rostro')
+nombres = ['lisa', 'yulissa', 'christopher']
+respuesta = input('Ingrese su nombre para clasificarlo: ')
+respuesta = respuesta.split(',')
+print('Por favor, pongase en el orden de los nombres ingresados')
 
 while True:
 
@@ -26,15 +27,15 @@ while True:
 	    cv2.rectangle(ventana, (x, y), (x + ancho, y + alto), color, grosor)
 
 	    # Agregar texto diferente para cada rostro
-	    texto = respuesta[i] if respuesta[i] in nombres else f"No identificado"
+
+	    texto = respuesta[i] if respuesta[i] in nombres else f'No identificado'
 	    cv2.putText(
 	    	ventana, texto, (x, y - 10), 
-	    	cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 2
-	    )
+	    	cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 2)
 
-	cv2.imshow("Video", ventana)
+	cv2.imshow('Video', ventana)
 
-	if cv2.waitKey(1) == ord("x"):
+	if cv2.waitKey(1) == ord('x'):
 		break
 
 cv2.destroyAllWindows()

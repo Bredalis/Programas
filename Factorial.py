@@ -1,11 +1,11 @@
 
-def Factorial(Numero):
+def factorial(numero):
 
-	if Numero == 0:
+	if numero == 0:
 		return 1
 
 	else:
-		return Numero * Factorial(Numero - 1)
+		return numero * factorial(numero - 1)
 		
 for i in range(5):
-	print(Factorial(i))
+	print(factorial(i))

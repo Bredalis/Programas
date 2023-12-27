@@ -1,38 +1,38 @@
 
-class Pastel:
+class pastel:
 
 	def __init__(self):
 
-		self.Lista_Nombres = []
-		self.Lista_Cantidades = []
-		self.Pregunta = ""
+		self.lista_nombres = []
+		self.lista_cantidades = []
+		self.pregunta = ''
 
-	def Ejecucion(self):
+	def ejecucion(self):
 
-		while self.Pregunta != "No":
+		while self.pregunta.lower() != 'no':
 
 			try:
-				self.Nombres = input("Nombre: ")	
-				self.Cantidades = int(input("Porcentaje: "))
+				self.nombres = input('Nombre: ')	
+				self.cantidades = int(input('Porcentaje: '))
 				
-				self.Lista_Nombres.append(self.Nombres)
-				self.Lista_Cantidades.append(self.Cantidades)
+				self.lista_nombres.append(self.nombres)
+				self.lista_cantidades.append(self.cantidades)
 
 			finally:
-				self.Pregunta = input("¿Quieres seguir ingresando integrantes?: ")
+				self.pregunta = input('¿Quieres seguir ingresando integrantes?: ')
 
-	def Grafica(self):
+	def grafica(self):
 
-		plt.pie(self.Lista_Cantidades, labels = self.Lista_Nombres)
+		plt.pie(self.lista_cantidades, labels = self.lista_nombres)
 
-		plt.title("Grafica de Pastel")
+		plt.title('Grafica de Pastel')
 		plt.show()
 
-if __name__ == "__main__":
+if __name__ == '__main__':
 
 	import matplotlib.pyplot as plt
 
-	Pastel = Pastel()
+	pastel = pastel()
 
-	Pastel.Ejecucion()
-	Pastel.Grafica()
+	pastel.ejecucion()
+	pastel.grafica()

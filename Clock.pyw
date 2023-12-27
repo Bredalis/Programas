@@ -2,41 +2,47 @@
 import tkinter as tk
 import time 
 
-Window = tk.Tk()
-Window.title('CLOCK')
-Window.resizable(0,0)
-Window.geometry('450x250')
-Window.iconbitmap('C:/Users/Angelica Gerrero/Desktop/LenguajesDeProgramacion/Icon/Imagenes/Reloj.ico')
+window = tk.Tk()
+window.title('CLOCK')
+window.resizable(0,0)
+window.geometry('450x250')
+window.iconbitmap('C:/Users/Angelica Gerrero/Desktop/LenguajesDeProgramacion/Icon/Imagenes/Reloj.ico')
 
-Window.columnconfigure(0, weight = 15)
-Window.rowconfigure(0, weight = 15)
-Window.columnconfigure(0, weight = 1)
-Window.rowconfigure(1, weight = 1)
+window.columnconfigure(0, weight = 15)
+window.rowconfigure(0, weight = 15)
+window.columnconfigure(0, weight = 1)
+window.rowconfigure(1, weight = 1)
 
-def Clock(): 
+def clock(): 
 
-	Hour = time.strftime('%r')
-	Day = time.strftime('%A') 
-	Month = time.strftime('%d-%m-%Y')
+	hour = time.strftime('%r')
+	day = time.strftime('%A') 
+	month = time.strftime('%d-%m-%Y')
 
-	Resizing = Hour_Interfaces.winfo_height()
-	Full_change = int((Resizing-5)*0.32)
+	resizing = hour_interfaces.winfo_height()
+	full_change = int((resizing - 5) * 0.32)
 	
-	Hour_Interfaces.config(text = Hour, font = ('', Full_change))
-	Day_Interfaces.config(text = Day, font = ('', 15))
-	Date_Interfaces.config(text = Month, font = ('', 15))
+	hour_interfaces.config(text = hour, font = ('', full_change))
+	day_interfaces.config(text = day, font = ('', 15))
+	date_interfaces.config(text = month, font = ('', 15))
 
-	Window.after(1000, Clock)
+	window.after(1000, clock)
 
-Hour_Interfaces = tk.Button(Window, fg = 'aqua', bg = "black", cursor = 'clock', relief = 'groove', bd = 3, activebackground = '#ff0266')
-Hour_Interfaces.grid(row = 0, sticky = 'snew', ipadx = 20 , ipady = 5)
+hour_interfaces = tk.Button(window, fg = 'aqua', bg = "black", 
+	cursor = 'clock', relief = 'groove', bd = 3, activebackground = '#ff0266')
 
-Day_Interfaces = tk.Button(Window, fg = 'green2', bg = "gray2", cursor = 'clock', relief = 'groove', bd = 3, activebackground = '#ff0266')
-Day_Interfaces.grid(row = 1, sticky = 'snew')
+hour_interfaces.grid(row = 0, sticky = 'snew', ipadx = 20 , ipady = 5)
 
-Date_Interfaces = tk.Button(Window, fg = 'blue', bg = 'gray3', cursor = 'clock', relief = 'groove', bd = 2, activebackground = '#00B0FF')
-Date_Interfaces.grid(row = 2, sticky = 'snew')
+day_interfaces = tk.Button(window, fg = 'green2', bg = "gray2", 
+	cursor = 'clock', relief = 'groove', bd = 3, activebackground = '#ff0266')
 
-Clock()
+day_interfaces.grid(row = 1, sticky = 'snew')
 
-Window.mainloop()
+date_interfaces = tk.Button(window, fg = 'blue', bg = 'gray3', 
+	cursor = 'clock', relief = 'groove', bd = 2, activebackground = '#00B0FF')
+
+date_interfaces.grid(row = 2, sticky = 'snew')
+
+clock()
+
+window.mainloop()

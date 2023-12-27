@@ -1,11 +1,11 @@
 
-def Fibonacci(Numero):
+def fibonacci(numero):
 
-	if Numero == 0 or Numero == 1:
-		return Numero
+	if numero == 0 or numero == 1:
+		return numero
 
 	else:
-		return Fibonacci(Numero - 1) + Fibonacci(Numero - 2)
+		return fibonacci(numero - 1) + fibonacci(numero - 2)
 
 for i in range(10):
-	print(Fibonacci(i))
+	print(fibonacci(i))

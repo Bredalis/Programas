@@ -7,98 +7,99 @@ import random
 
 # Lectura de datos
 
-Contenido = open("Manual.txt", "r").read()
-exec(Contenido)
+contenido = open('Manual.txt', 'r').read()
+exec(contenido)
 
-Manual("C:/Users/Angelica Gerrero/Desktop/LenguajesDeProgramacion/Python/Programas/Manual_Ahorcado.txt")
+manual('C:/Users/Angelica Gerrero/Desktop/LenguajesDeProgramacion/Python/Programas/Manual_Ahorcado.txt')
 
 # Categorias de palabras
 
-Contenido = open("Categorias_Ahorcado.txt", "r").read()
-exec(Contenido)
+contenido = open('Categorias_Ahorcado.txt', 'r').read()
+exec(contenido)
 
-Categorias = {
-	"Comida": Comida, "Sentimientos": Sentimientos, "Paises": Paises, "Nombres": Nombres, "Cosas": Cosas, "Animales": Animales,
-	"Artistas": Artistas
+categorias = {
+	'Comida': comida, 'Sentimientos': sentimientos, 'Paises': paises, 
+	'Nombres': nombres, 'Cosas': cosas, 'Animales': animales,
+	'Artistas': artistas
 }
 
 # Mecanica del juego
 
-def Personaje_Ahorcado():
+def personaje_ahorcado():
 
-	Ventana = tk.Tk()
-	Ventana.title("Ahorcado")
-	Ventana.resizable(0,0)
+	ventana = tk.Tk()
+	ventana.title('Ahorcado')
+	ventana.resizable(0, 0)
 
-	Ruta = Image.open("C:/Users/Angelica Gerrero/Desktop/LenguajesDeProgramacion/Icon/Imagenes/Ahorcado.ico")
+	ruta = Image.open('C:/Users/Angelica Gerrero/Desktop/LenguajesDeProgramacion/Icon/Imagenes/Ahorcado.ico')
 	
-	Imagen = ImageTk.PhotoImage(Ruta)
+	imagen = ImageTk.PhotoImage(ruta)
 
-	Etiqueta = tk.Label(Ventana, image = Imagen)
-	Etiqueta.pack()
+	etiqueta = tk.Label(ventana, image = imagen)
+	etiqueta.pack()
 
-	Ventana.mainloop()
+	ventana.mainloop()
 
-def Seleccionar_Palabra():
+def seleccionar_palabra():
 
-	Categoria = input("Ingrese el tipo de categoria entre (Comida, Sentimientos, Paises, Nombres, Cosas, Animales, Artistas):")
+	Categoria = input('Ingrese el tipo de categoria entre (Comida, Sentimientos, Paises, Nombres, Cosas, Animales, Artistas):')
 
-	print(f"La categoria es: {Categoria}")
-	Palabra = random.choice(Categorias[Categoria])
+	print(f'La categoria es: {Categoria}')
+	palabra = random.choice(categorias[Categoria])
 
-	return Palabra
+	return palabra
 
-def Inicializar_Tablero(Palabra):	
-	return ["_"] * len(Palabra)
+def inicializar_tablero(palabra):	
+	return ['_'] * len(palabra)
 
-def Mostrar_Tablero(Tablero):
-	print(" ".join(Tablero))
+def mostrar_tablero(tablero):
+	print(' '.join(tablero))
 
-def Pedir_Letra():
+def pedir_letra():
 
-	Letra = input("Intoduce la letra: ")
-	return Letra.lower()
+	letra = input('Intoduce la letra: ')
+	return letra.lower()
 
-def Actualizar_Tablero(Palabra, Tablero, Letra):
+def actualizar_tablero(palabra, tablero, letra):
 
-	for i in range(len(Palabra)):
+	for i in range(len(palabra)):
 
-		if Palabra[i] == Letra:
-			Tablero[i] = Letra
+		if palabra[i] == letra:
+			tablero[i] = letra
 
-def Jugar_Ahorcado():
+def jugar_ahorcado():
 	
-	Palabra = Seleccionar_Palabra()
-	Intentos_Maximos = 6
-	Intentos = 0
-	Tablero = Inicializar_Tablero(Palabra)
+	palabra = seleccionar_palabra()
+	intentos_maximos = 6
+	intentos = 0
+	tablero = inicializar_tablero(palabra)
 
-	while "_" in Tablero and Intentos < Intentos_Maximos:
+	while '_' in tablero and intentos < intentos_maximos:
 
-		Mostrar_Tablero(Tablero)
-		Letra = Pedir_Letra()
+		mostrar_tablero(tablero)
+		letra = pedir_letra()
 
-		if Letra in Palabra:
+		if letra in palabra:
 
-			Actualizar_Tablero(Palabra, Tablero, Letra)
-			print("Correcto!")
+			actualizar_tablero(palabra, tablero, letra)
+			print('Correcto!')
 
 		else:
 
-			Intentos += 1
+			intentos += 1
 
 			for i in range(1, 6):
 
-				if Intentos == i:
-					print(f"Te quedan {6 - i} intentos")
+				if intentos == i:
+					print(f'Te quedan {6 - i} intentos')
 
-			print("Incorrecto. Intentos {}/{}".format(Intentos, Intentos_Maximos))
+			print('Incorrecto. intentos {}/{}'.format(intentos, intentos_maximos))
 
-	if "_" not in Tablero:
-		print("Ganaste la palabra era:", Palabra)
+	if '_' not in tablero:
+		print('Ganaste la palabra era:', palabra)
 
 	else:
-		print("Perdiste :(")
-		Personaje_Ahorcado()
+		print('Perdiste :(')
+		personaje_ahorcado()
 
-Jugar_Ahorcado()
+jugar_ahorcado()

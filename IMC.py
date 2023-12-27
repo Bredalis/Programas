@@ -1,28 +1,28 @@
 
 from math import floor
 
-Contenido = open("Manual.txt").read()
-exec(Contenido)
+contenido = open('Manual.txt').read()
+exec(contenido)
 
-Manual("Manual_IMC.txt")
+manual('Manual_IMC.txt')
 
-def IMC():
+def imc():
 
-	Peso = int(input("Ingrese su peso: "))
-	Altura = float(input("Ingrese su altura: "))
+	peso = int(input('Ingrese su peso: '))
+	altura = float(input('Ingrese su altura: '))
 
-	Resultado = floor(Peso / (Altura * Altura))
+	resultado = floor(peso / (altura * altura))
 
-	if Resultado < 18.5:
-		print(f"IMC: {Resultado}, Peso Bajo")
+	if resultado < 18.5:
+		print(f'IMC: {resultado}, Peso Bajo')
 
-	elif Resultado >= 18.5 and Resultado <= 24.9:
-		print(f"IMC: {Resultado}, Peso Normal")
+	elif resultado >= 18.5 and resultado <= 24.9:
+		print(f'IMC: {resultado}, Peso Normal')
 
-	elif Resultado >= 25 and Resultado <= 29.9:
-		print(f"IMC: {Resultado}, Sobrepeso")
+	elif resultado >= 25 and resultado <= 29.9:
+		print(f'IMC: {resultado}, Sobrepeso')
 
-	elif Resultado >= 30:
-		print(f"IMC: {Resultado}, Obesidad")
+	elif resultado >= 30:
+		print(f'IMC: {resultado}, Obesidad')
 
-IMC()
+imc()

@@ -1,21 +1,19 @@
 
-"""
-Programa que reproduce 
-musica en mp3
-"""
+# Programa que reproduce 
+# musica en mp3
 
-class Reproductor_De_Musica:
+class reproductorDeMusica:
 
 	def __init__(self, interfaz):
 
 		# Propiedades de la interfaz
 		
 		self.interfaz = interfaz
-		self.interfaz.title("PlayList")
-		self.interfaz.geometry("210x100")
+		self.interfaz.title('PlayList')
+		self.interfaz.geometry('210x100')
 		self.interfaz.resizable(0,0)
-		self.interfaz.config(bg = "#edd269")
-		self.icono = "C:/Users/Angelica Gerrero/Desktop/LenguajesDeProgramacion/Icon/Imagenes/Playlists.ico"
+		self.interfaz.config(bg = '#edd269')
+		self.icono = 'C:/Users/Angelica Gerrero/Desktop/LenguajesDeProgramacion/Icon/Imagenes/Playlists.ico'
 		self.interfaz.iconbitmap(self.icono)
 
 		self.playlist = [] # Lista de musica
@@ -25,20 +23,30 @@ class Reproductor_De_Musica:
 
 		# Botones
 
-		self.cargar = tk.Button(self.interfaz, text = "Cargar", bg = "#aee239", command = self.Cargar).pack()
-		self.reproducir = tk.Button(self.interfaz, text = "Reproducir", bg = "#aee239", command = self.Reproducir).pack()
-		self.pausar = tk.Button(self.interfaz, text = "Pausar", bg = "#aee239", command = self.Pausar).pack()
-		self.reanudar = tk.Button(self.interfaz, text = "Reanudar", bg = "#aee239", command = self.Reanudar).pack()
+		self.cargar = tk.Button(self.interfaz, text = 'Cargar', 
+			bg = '#aee239', command = self.cargar).pack()
+
+		self.reproducir = tk.Button(self.interfaz, text = 'Reproducir', 
+			bg = '#aee239', command = self.reproducir).pack()
+
+		self.pausar = tk.Button(self.interfaz, text = 'Pausar', 
+			bg = '#aee239', command = self.pausar).pack()
+
+		self.reanudar = tk.Button(self.interfaz, text = 'Reanudar', 
+			bg = '#aee239', command = self.reanudar).pack()
 
 	# Funcion que busca y guarda la musica
-	def Cargar(self):
-		cancion = filedialog.askopenfilename(title = "Musica", initialdir = "C:", 
-			filetypes = (("Archivo de audio", "*.mp3"), ("todos los archivos", "*.*")))
+
+	def cargar(self):
+		cancion = filedialog.askopenfilename(
+			title = 'Musica', initialdir = 'C:', filetypes = (
+				('Archivo de audio', '*.mp3'), ('todos los archivos', '*.*')))
 
 		self.playlist.append(cancion) # Se guarda aqui
 
 	# Funcion que reproduce la musica
-	def Reproducir(self):
+
+	def reproducir(self):
 		if len(self.playlist) == 0:
 			return
 
@@ -46,14 +54,16 @@ class Reproductor_De_Musica:
 		pygame.mixer.music.play()
 
 	# Pausa la musica
-	def Pausar(self):
+
+	def pausar(self):
 		pygame.mixer.music.pause()
 
 	# Reanuda la musica
-	def Reanudar(self):
+
+	def reanudar(self):
 		pygame.mixer.music.unpause()
 
-if __name__ == "__main__":
+if __name__ == '__main__':
 
 	# Librerias
 
@@ -64,5 +74,5 @@ if __name__ == "__main__":
 	# Interfaz
 
 	interfaz = tk.Tk()
-	app = Reproductor_De_Musica(interfaz)
+	app = reproductorDeMusica(interfaz)
 	interfaz.mainloop()
