@@ -19,7 +19,7 @@ ventana.iconbitmap('C:/Users/Angelica Gerrero/Desktop/LenguajesDeProgramacion/Ic
 opcion = tk.IntVar()
 url = ''
 
-openai.api_key = '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'
+openai.api_key = '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'
 modelo = 'gpt-3.5-turbo'
 
 # Funciones
