@@ -5,7 +5,7 @@ import math
 ventana = tk.Tk()
 ventana.geometry('245x245') 
 ventana.title('CALCULATOR')
-ventana.resizable(0,0)
+ventana.resizable(0, 0)
 ventana.config(bg = 'white')
 
 ventana.iconbitmap('C:/Users/Angelica Gerrero/Desktop/LenguajesDeProgramacion/Icon/Imagenes/calculadora.ico')
