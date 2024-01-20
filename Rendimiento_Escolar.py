@@ -22,8 +22,8 @@ print(df.shape)
 
 # Entrenamiento
 
-x_train = df.loc[:99, ['horas_de_estudios']]
-y_train = df.loc[:99, ['calificaciones']]
+x_train = df.loc[:99, ['calificaciones']]
+y_train = df.loc[:99, ['horas_de_estudios']]
 
 print(len(x_train))
 print(len(y_train))
@@ -33,8 +33,8 @@ print(y_train)
 
 # Pruebas
 
-x_test = df.loc[100:, ['horas_de_estudios']]
-y_test = df.loc[100:, ['calificaciones']]
+x_test = df.loc[100:, ['calificaciones']]
+y_test = df.loc[100:, ['horas_de_estudios']]
 
 print(len(x_test))
 print(len(y_test))
@@ -63,7 +63,7 @@ print(r2)
 
 plt.rcParams['figure.figsize'] = (10, 5)
 
-df.plot.scatter(x = 'horas_de_estudios', y = 'calificaciones')
+df.plot.scatter(x = 'calificaciones', y = 'horas_de_estudios')
 plt.show()
 
 # Grafica con prediccion

@@ -45,10 +45,12 @@ def sonido():
 
 # Funcion para repetir la temporizacion
 
+cantidad = 0
+
 def repetir(cantidad):	
 	temporizador(cantidad)
 
-repetir(0)
+repetir(cantidad)
 
 # Imagen
 
@@ -57,6 +59,6 @@ img = ImageTk.PhotoImage(url)
 
 tk.Label(interfaz, image = img).pack() 
 tk.Button(interfaz, text = 'Repetir', 
-	command = lambda: repetir(0)).place(x = 12, y = 10)
+	command = lambda: repetir(cantidad)).place(x = 12, y = 10)
 
 interfaz.mainloop()
