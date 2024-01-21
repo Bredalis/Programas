@@ -8,7 +8,11 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
-from sklearn.metrics import mean_absolute_error, r2_score
+from Metodos_Modelo import *
+
+# Metodos
+
+metodos = metodosParaModelos()
 
 # Lectura de datos
 
@@ -46,18 +50,13 @@ print(y_test)
 
 modelo = LinearRegression(fit_intercept = True)
 
-for i in range(0, 1000):
-  modelo.fit(x_train, y_train)
+metodos.entrenamiento(modelo, x_train, y_train)
 
 y_hat = modelo.predict(x_test)
 
 # Metricas de evaluacion
 
-MAE = mean_absolute_error(y_test, y_hat)
-print(MAE)
-
-r2 = r2_score(y_test, y_hat)
-print(r2)
+metodos.metricas_regresion(y_test, y_hat)
 
 # Grafica sin prediccion
 
@@ -69,5 +68,5 @@ plt.show()
 # Grafica con prediccion
 
 plt.scatter(x_train, y_train)
-plt.plot(x_train, y_hat)
+plt.plot(x_test, y_hat)
 plt.show()
