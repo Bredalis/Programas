@@ -80,7 +80,7 @@ plt.show()
 
 # Grafica con prediccion
 
-plt.scatter(x_train, y_train)
+plt.scatter(x_test, y_test)
 plt.plot(x_test, y_hat)
 
 plt.show()
