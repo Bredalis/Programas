@@ -67,6 +67,9 @@ plt.show()
 
 # Grafica con prediccion
 
-plt.scatter(x_train, y_train)
-plt.plot(x_test, y_hat)
+plt.scatter(x_test, y_test, label = 'Datos')
+plt.plot(x_test, y_hat, c = 'red', label = 'Predicciones')
+
+plt.title('Calificaciones y horas de estudios')
+plt.legend()
 plt.show()

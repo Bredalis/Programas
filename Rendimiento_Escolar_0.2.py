@@ -80,7 +80,9 @@ plt.show()
 
 # Grafica con prediccion
 
-plt.scatter(x_test, y_test)
-plt.plot(x_test, y_hat)
+plt.scatter(x_test, y_test, c = 'red', label = 'Datos')
+plt.plot(x_test, y_hat, label = 'Predicciones')
 
+plt.title('Calificaciones Final (Alumno y Alcohol)')
+plt.legend()
 plt.show()
