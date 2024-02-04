@@ -10,7 +10,7 @@ import random
 contenido = open('Manual.txt', 'r').read()
 exec(contenido)
 
-manual('C:/Users/Angelica Gerrero/Desktop/LenguajesDeProgramacion/Python/Programas/Manual_Ahorcado.txt')
+manual('Manual_Ahorcado.txt')
 
 # Categorias de palabras
 
@@ -31,7 +31,7 @@ def personaje_ahorcado():
 	ventana.title('Ahorcado')
 	ventana.resizable(0, 0)
 
-	ruta = Image.open('C:/Users/Angelica Gerrero/Desktop/LenguajesDeProgramacion/Icon/Imagenes/Ahorcado.ico')
+	ruta = Image.open('C:/Users/Bradalis/Desktop/LenguajesDeProgramacion/Icon/Imagenes/Ahorcado.ico')
 	
 	imagen = ImageTk.PhotoImage(ruta)
 

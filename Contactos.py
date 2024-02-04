@@ -22,14 +22,20 @@ class Contactos:
 		self.df = pd.DataFrame(self.datos, 
 			columns = ['id', 'nombres', 'numeros_telefonicos'])
 
+	def borrar_columna(self):
+		self.df = self.df.drop(['id'], axis = 1)
+
 	def mostrar_contactos(self):
 		print(self.df) 
 
 # Mostra contactos
 
-url = 'G:/Mi unidad/LenguajesDeProgramacion/BBDD/Programas/SQLITE3/Contactos.db'
+print('Contactos:\n')
+
+url = 'C:/Users/Bradalis/Desktop/LenguajesDeProgramacion/BBDD/Programas/SQLITE3/Contactos.db'
 bbdd = Contactos(url)
 bbdd.instruccion()
 bbdd.obtener_datos()
 bbdd.crear_df()
+bbdd.borrar_columna()
 bbdd.mostrar_contactos()

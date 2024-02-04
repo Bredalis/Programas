@@ -13,7 +13,7 @@ class reproductorDeMusica:
 		self.interfaz.geometry('210x100')
 		self.interfaz.resizable(0,0)
 		self.interfaz.config(bg = '#edd269')
-		self.icono = 'C:/Users/Angelica Gerrero/Desktop/LenguajesDeProgramacion/Icon/Imagenes/Playlists.ico'
+		self.icono = 'C:/Users/Bradalis/Desktop/LenguajesDeProgramacion/Icon/Imagenes/Playlists.ico'
 		self.interfaz.iconbitmap(self.icono)
 
 		self.playlist = [] # Lista de musica

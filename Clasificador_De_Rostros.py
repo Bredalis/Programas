@@ -5,7 +5,7 @@ import winsound
 color = (255, 0, 0)
 grosor = 2
 
-url = 'C:/Users/Angelica Gerrero/Desktop/LenguajesDeProgramacion/Python/OpenCV/haarcascade_frontalface_default.xml'
+url = 'C:/Users/Bradalis/Desktop/LenguajesDeProgramacion/Python/OpenCV/haarcascade_frontalface_default.xml'
 clasificador = cv2.CascadeClassifier(url)
 captura_video = cv2.VideoCapture(0)
 

@@ -17,7 +17,7 @@ metodos = metodosParaModelos()
 
 # Lectura de datos
 
-url = 'C:/Users/Angelica Gerrero/Desktop/LenguajesDeProgramacion/Datasets/CSV/student-mat.csv'
+url = 'C:/Users/Bradalis/Desktop/LenguajesDeProgramacion/Datasets/CSV/student-mat.csv'
 df = pd.read_csv(url)
 print(df)
 

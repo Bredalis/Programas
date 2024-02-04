@@ -11,7 +11,7 @@ ventana.resizable(0, 0)
 ventana.config(bg = 'pink')
 tk.Wm.wm_title(ventana, 'Links')
 
-icono = 'C:/Users/Angelica Gerrero/Desktop/LenguajesDeProgramacion/Icon/Imagenes/Python_2.ico'
+icono = 'C:/Users/Bradalis/Desktop/LenguajesDeProgramacion/Icon/Imagenes/Python_2.ico'
 ventana.iconbitmap(icono)
 
 def youtube():
@@ -21,7 +21,7 @@ def bdbrowser():
 	sp.run('C:/Program Files (x86)/DB Browser for SQLite/DB Browser for SQLite.exe')
 
 def visual_code():
-	sp.run('C:/Users/Angelica Gerrero/AppData/Local/Programs/Microsoft VS Code/Code.exe')
+	sp.run('C:/Users/Bradalis/AppData/Local/Programs/Microsoft VS Code/Code.exe')
 
 def git():
 	sp.run('C:/AngelicaGuerrero/Git/git-bash.exe')

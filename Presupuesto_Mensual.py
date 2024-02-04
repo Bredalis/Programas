@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 
 # Conectar a BBDD
 
-url_presupuesto = 'C:/Users/Angelica Gerrero/Desktop/LenguajesDeProgramacion/BBDD/Programas/SQLITE3/Presupuesto.db'
+url_presupuesto = 'C:/Users/Bradalis/Desktop/LenguajesDeProgramacion/BBDD/Programas/SQLITE3/Presupuesto.db'
 bbdd_presupuesto = sqlite.connect(url_presupuesto)
 
 # Obtener todas las columnas de las tablas

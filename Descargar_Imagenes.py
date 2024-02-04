@@ -9,7 +9,7 @@ tipo = input('Ingrese el tipo de imagen que quiere: ')
 
 def descargar_imagen(url, nombre, tipo):
 
-	ruta = 'C:/Users/Angelica Gerrero/Desktop/LenguajesDeProgramacion/Icon/Imagenes/'
+	ruta = 'C:/Users/Bradalis/Desktop/LenguajesDeProgramacion/Icon/Imagenes/'
 
 	concatenacion = ruta + nombre + tipo
 	imagen = requests.get(url).content

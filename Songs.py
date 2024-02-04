@@ -26,10 +26,10 @@ class Tristes(ListaDeCanciones):
 class Pop(ListaDeCanciones):
 	def __init__(self):
 
-		self.lista = ['Hymn For The Weekend',  'Human', 'Middle Of The Night'
+		self.lista = ['Hymn For The Weekend',  'Human', 'Middle Of The Night',
 		'New Rules', 'Treat You Better', 'Unstoppable', 'Woman', 
 		'Middle Of The Night', 'Satisfya', 'Ainsi Bas La Vida',
-		'Derniére Danse']
+		'Derniére Danse' , 'Need to Know']
 
 	def informacion(self):
 		super().informacion('pop')

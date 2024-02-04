@@ -11,7 +11,7 @@ def visualizador(url):
 	interfaz.resizable(0, 0)
 	interfaz.title('Imagenes')
 
-	icono = 'C:/Users/Angelica Gerrero/Desktop/LenguajesDeProgramacion/Icon/Imagenes/Imagen.ico'
+	icono = 'C:/Users/Bradalis/Desktop/LenguajesDeProgramacion/Icon/Imagenes/Imagen.ico'
 	interfaz.iconbitmap(icono)
 	
 	foto = Image.open(url)

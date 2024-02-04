@@ -13,7 +13,7 @@ interfaz.resizable(0, 0)
 
 # Icono
 
-img = 'C:/Users/Angelica Gerrero/Desktop/LenguajesDeProgramacion/Icon/Imagenes/Reloj.ico'
+img = 'C:/Users/Bradalis/Desktop/LenguajesDeProgramacion/Icon/Imagenes/Reloj.ico'
 interfaz.iconbitmap(img)
 
 # Funcion temporizadora
@@ -40,7 +40,7 @@ def sonido():
 
 	pygame.init()
 
-	url = pygame.mixer.Sound('C:/Users/Angelica Gerrero/Videos/Reloj.mp3')
+	url = pygame.mixer.Sound('C:/Users/Bradalis/Videos/Reloj.mp3')
 	pygame.mixer.Sound.play(url, 5)
 
 # Funcion para repetir la temporizacion

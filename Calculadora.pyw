@@ -8,7 +8,7 @@ ventana.title('CALCULATOR')
 ventana.resizable(0, 0)
 ventana.config(bg = 'white')
 
-ventana.iconbitmap('C:/Users/Angelica Gerrero/Desktop/LenguajesDeProgramacion/Icon/Imagenes/calculadora.ico')
+ventana.iconbitmap('C:/Users/Bradalis/Desktop/LenguajesDeProgramacion/Icon/Imagenes/calculadora.ico')
 
 contenido = open('Manual.txt', 'r').read()
 exec(contenido)

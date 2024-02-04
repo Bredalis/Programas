@@ -12,14 +12,14 @@ ventana.title('ChatBot')
 ventana.geometry('1075x490')
 ventana.resizable(0, 0)
 ventana.config(bg = '#566573')
-ventana.iconbitmap('C:/Users/Angelica Gerrero/Desktop/LenguajesDeProgramacion/Icon/Imagenes/ai.ico')
+ventana.iconbitmap('C:/Users/Bradalis/Desktop/LenguajesDeProgramacion/Icon/Imagenes/ai.ico')
 
 # Variables
 
 opcion = tk.IntVar()
 url = ''
 
-openai.api_key = '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'
+openai.api_key = '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'
 modelo = 'gpt-3.5-turbo'
 
 # Funciones
@@ -66,7 +66,7 @@ def Dalle():
 
 	nombre = input('Ingrese el nombre para la imagen: ')
 	nombre = nombre + '.jpg'
-	url = 'C:/Users/Angelica Gerrero/Desktop/LenguajesDeProgramacion/Icon/IMAI/' + nombre
+	url = 'C:/Users/Bradalis/Desktop/LenguajesDeProgramacion/Icon/IMAI/' + nombre
 
 	if foto.status_code == 200:
 		with open(url, 'wb') as f:

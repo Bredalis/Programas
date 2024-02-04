@@ -13,7 +13,7 @@ def abrir_imagen():
     ventana = tk.Tk()
     ventana.title('Imagen')
     ventana.resizable(0,0)
-    ventana.iconbitmap('C:/Users/Angelica Gerrero/Desktop/LenguajesDeProgramacion/Icon/Imagenes/Camara_2.ico')
+    ventana.iconbitmap('C:/Users/Bradalis/Desktop/LenguajesDeProgramacion/Icon/Imagenes/Camara_2.ico')
 
     global foto
 
