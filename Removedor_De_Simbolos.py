@@ -8,7 +8,7 @@ class RemplazarSimbolos:
 		self.url = url_archivo
 
 	def abrir_archivo(self):
-		self.archivo = open(self.url, encoding = 'utf').read()
+		self.archivo = open(self.url).read()
 
 	def remplazar_simbolos(self, simbolo, simbolo_nuevo):
 		self.archivo_nuevo = self.archivo.replace(simbolo, simbolo_nuevo)
@@ -24,8 +24,8 @@ class RemplazarSimbolos:
 
 # Modifica la url y los simbolos
 
-# archivo = RemplazarSimbolos('C:/Users/Bradalis/Downloads/Natanael.txt')
-# archivo.abrir_archivo()
-# archivo.remplazar_simbolos('*', ' ')
-# archivo.guardar_archivo()
-# archivo.mostrar_archivo()
+archivo = RemplazarSimbolos('C:/Users/Bradalis/Downloads/Eumin.txt')
+archivo.abrir_archivo()
+archivo.remplazar_simbolos('.', ' ')
+archivo.guardar_archivo()
+archivo.mostrar_archivo()

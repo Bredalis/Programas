@@ -2,7 +2,7 @@
 def traduccion_emojis(solicitud):
 
 	import openai
-	openai.api_key = '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'
+	openai.api_key = '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'
 
 	# Prompts y estrutura de mensajes
 
