@@ -24,8 +24,8 @@ class RemplazarSimbolos:
 
 # Modifica la url y los simbolos
 
-archivo = RemplazarSimbolos('C:/Users/Bradalis/Downloads/Eumin.txt')
-archivo.abrir_archivo()
-archivo.remplazar_simbolos('.', ' ')
-archivo.guardar_archivo()
-archivo.mostrar_archivo()
+# archivo = RemplazarSimbolos('C:/Users/Bradalis/Downloads/Archivo.txt')
+# archivo.abrir_archivo()
+# archivo.remplazar_simbolos('#', ' ')
+# archivo.guardar_archivo()
+# archivo.mostrar_archivo()

@@ -1,18 +1,38 @@
 
-import pymongo
+import sqlite3 as sqlite
+import pandas as pd
 
-# Conectar a la bbdd
+class ClavesSeguras:
 
-try:
-	cliente = pymongo.MongoClient('mongodb://localhost:27017/')
-	db = cliente['Contraseñas_Seguras']
-	coleccion = db['Google'] # Nombre de la coleccion
+	def conectar_bbdd(self):
+		self.url = 'C:/Users/Bradalis/Desktop/LenguajesDeProgramacion/BBDD/Programas/SQLITE3/Contraseñas_Seguras.db'
+		self.bbdd = sqlite.connect(self.url)
 
-	# Datos a insertar
-	# datos = {'Contraseña': 'jswop34-2mdjpo%$fgs'}
-	# coleccion.insert_one(datos)
+	def crear_cursor(self):
+		self.cursor = self.bbdd.cursor()
 
-	cliente.close()
+	def ejecucion(self):
+		self.cursor.execute('SELECT * FROM  Claves_Seguras')
 
-except Exception:
-	print('Ha ocurrido un error')	
+	def crear_df(self):
+		self.datos = self.cursor.fetchall()
+		self.df = pd.DataFrame(self.datos, 
+			columns = ['id', 'Entidades',  'Claves'])
+
+	def borrar_columna(self):
+		self.df = self.df.drop('id', axis = 1)
+
+	def informacion(self):
+		print(self.df)
+
+	def guardar_cambios(self):
+		self.bbdd.commit()
+		self.bbdd.close()
+
+claves = ClavesSeguras()
+claves.conectar_bbdd()
+claves.crear_cursor()
+claves.ejecucion()
+claves.crear_df()
+claves.borrar_columna()
+claves.informacion()
