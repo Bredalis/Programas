@@ -26,7 +26,7 @@ class Grafica:
 		plt.show()
 
 	def propiedades(self):
-		plt.title('Problematicas En Nuestra Comunidad Educativa')
+		plt.title('Problemáticas En Nuestra Comunidad Educativa')
 
 barras = Grafica() 
 barras.crear_df()

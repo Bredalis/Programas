@@ -7,7 +7,7 @@ class ClavesSeguras:
 	def conectar_bbdd(self):
 		self.url = 'C:/Users/Bradalis/Desktop/LenguajesDeProgramacion/BBDD/Programas/SQLITE3/Contraseñas_Seguras.db'
 		self.bbdd = sqlite.connect(self.url)
-
+ 
 	def crear_cursor(self):
 		self.cursor = self.bbdd.cursor()
 
