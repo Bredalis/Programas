@@ -24,8 +24,8 @@ class RemplazarSimbolos:
 
 # Modifica la url y los simbolos
 
-# archivo = RemplazarSimbolos('C:/Users/Bradalis/Downloads/Archivo.txt')
+# archivo = RemplazarSimbolos('C:/Users/Bradalis/Downloads/Borrar.txt')
 # archivo.abrir_archivo()
-# archivo.remplazar_simbolos('#', ' ')
+# archivo.remplazar_simbolos('*', ' ')
 # archivo.guardar_archivo()
 # archivo.mostrar_archivo()
