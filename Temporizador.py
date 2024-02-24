@@ -40,7 +40,7 @@ def sonido():
 
 	pygame.init()
 
-	url = pygame.mixer.Sound('C:/Users/Bradalis/Videos/Reloj.mp3')
+	url = pygame.mixer.Sound('C:/Users/Bradalis/Desktop/LenguajesDeProgramacion/Python/OpenCV/Campana.mp3')
 	pygame.mixer.Sound.play(url, 5)
 
 # Funcion para repetir la temporizacion
