@@ -31,12 +31,12 @@ y = pd.DataFrame(y)
 
 # Entrenamiento
 
-x_train = x.iloc[:100]
+X_train = x.iloc[:100]
 y_train = y.iloc[:100]
 
 # Prueba
 
-x_test = x.iloc[100:]
+X_test = x.iloc[100:]
 y_test = y.iloc[100:]
 
 # Modelo
@@ -45,11 +45,11 @@ modelo = LinearRegression()
 
 # Entrenamiento
 
-metodos.entrenamiento(modelo, x_train, y_train)
+metodos.entrenamiento(modelo, X_train, y_train)
 
 # Prediccion
 
-y_hat = modelo.predict(x_test)
+y_hat = modelo.predict(X_test)
 
 # Metricas
 
@@ -80,8 +80,8 @@ plt.show()
 
 # Grafica con prediccion
 
-plt.scatter(x_test, y_test, c = 'red', label = 'Datos')
-plt.plot(x_test, y_hat, label = 'Predicciones')
+plt.scatter(X_test, y_test, c = 'red', label = 'Datos')
+plt.plot(X_test, y_hat, label = 'Predicciones')
 
 plt.title('Calificaciones Final (Alumno y Alcohol)')
 plt.legend()

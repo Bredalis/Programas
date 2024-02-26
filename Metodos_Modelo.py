@@ -9,9 +9,9 @@ class metodosParaModelos:
 	def __init__(self):
 		pass
 
-	def entrenamiento(self, modelo, x_train, y_train):
+	def entrenamiento(self, modelo, X_train, y_train):
 		for i in range(0, 1000):
-			modelo.fit(x_train, y_train)		
+			modelo.fit(X_train, y_train)		
 
 	def metricas_regresion(self, y_test, y_hat):
 		print(f'MSE: {mean_squared_error(y_test, y_hat)}')

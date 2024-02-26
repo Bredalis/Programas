@@ -26,33 +26,33 @@ print(df.shape)
 
 # Entrenamiento
 
-x_train = df.loc[:99, ['calificaciones']]
+X_train = df.loc[:99, ['calificaciones']]
 y_train = df.loc[:99, ['horas_de_estudios']]
 
-print(len(x_train))
+print(len(X_train))
 print(len(y_train))
 
-print(x_train)
+print(X_train)
 print(y_train)
 
 # Pruebas
 
-x_test = df.loc[100:, ['calificaciones']]
+X_test = df.loc[100:, ['calificaciones']]
 y_test = df.loc[100:, ['horas_de_estudios']]
 
-print(len(x_test))
+print(len(X_test))
 print(len(y_test))
 
-print(x_test)
+print(X_test)
 print(y_test)
 
 # Modelo
 
 modelo = LinearRegression(fit_intercept = True)
 
-metodos.entrenamiento(modelo, x_train, y_train)
+metodos.entrenamiento(modelo, X_train, y_train)
 
-y_hat = modelo.predict(x_test)
+y_hat = modelo.predict(X_test)
 
 # Metricas de evaluacion
 
@@ -67,8 +67,8 @@ plt.show()
 
 # Grafica con prediccion
 
-plt.scatter(x_test, y_test, label = 'Datos')
-plt.plot(x_test, y_hat, c = 'red', label = 'Predicciones')
+plt.scatter(X_test, y_test, label = 'Datos')
+plt.plot(X_test, y_hat, c = 'red', label = 'Predicciones')
 
 plt.title('Calificaciones y horas de estudios')
 plt.legend()
