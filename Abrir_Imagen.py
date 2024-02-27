@@ -5,7 +5,7 @@ from tkinter import filedialog
 
 foto = ''
 
-contenido = open('Manual.txt').read()
+contenido = open('Manual.txt', 'r').read()
 exec(contenido)
 
 def abrir_imagen():

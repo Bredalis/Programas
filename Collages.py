@@ -9,7 +9,7 @@ import cv2
 
 # Obtener archivo StackImages
 
-stackimages = open('C:/Users/Bradalis/Desktop/LenguajesDeProgramacion/Python/OpenCV/StackImages.py').read()
+stackimages = open('C:/Users/Bradalis/Desktop/LenguajesDeProgramacion/Python/OpenCV/StackImages.py', 'r').read()
 exec(stackimages)
 
 def creacion_collage(url_1, url_2, url_3, url_4, ancho, alto):

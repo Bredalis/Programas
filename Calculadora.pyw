@@ -10,7 +10,7 @@ ventana.config(bg = 'white')
 
 ventana.iconbitmap('C:/Users/Bradalis/Desktop/LenguajesDeProgramacion/Icon/Imagenes/calculadora.ico')
 
-contenido = open('Manual.txt').read()
+contenido = open('Manual.txt', 'r').read()
 exec(contenido)
 
 def clean():
