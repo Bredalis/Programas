@@ -7,7 +7,7 @@ import random
 
 # Lectura de datos
 
-contenido = open('Manual.txt', 'r').read()
+contenido = open('Manual.txt').read()
 exec(contenido)
 
 manual('Manual_Ahorcado.txt')
