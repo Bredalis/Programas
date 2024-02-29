@@ -11,7 +11,7 @@ class EntrevistaLaboral:
 		self.area_laboral = area_laboral
 
 	def estructura(self):
-		openai.api_key = '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'
+		openai.api_key = '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'
 
 		self.mensaje = [
 			{'role': 'system', 'content': f'Crea una lista de 10 preguntas para una entrevista de trabajo sobre {self.area_laboral}'},
