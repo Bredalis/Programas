@@ -19,7 +19,7 @@ ventana.iconbitmap('C:/Users/Bradalis/Desktop/LenguajesDeProgramacion/Icon/Image
 opcion = tk.IntVar()
 url = ''
 
-openai.api_key = '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'
+openai.api_key = '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'
 modelo = 'gpt-3.5-turbo'
 
 # Funciones

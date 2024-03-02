@@ -7,7 +7,7 @@ class ResumirTexto:
 		self.prompt = input('Texto: ')
 
 	def estructura(self):
-		openai.api_key = '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'
+		openai.api_key = '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'
 
 		self.mensaje = [
 			{'role': 'system', 'content': 'Simplify text to a level appropriate for a second-grade student'},

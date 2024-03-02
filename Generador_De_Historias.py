@@ -49,7 +49,7 @@ sea de genero de suspenso y sea la playa
 '''
 
 historia_suspenso = GeneradorDeHistorias(
-	'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', 
+	'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', 
 	datos
 )
 
