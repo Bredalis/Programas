@@ -81,7 +81,7 @@ def division():
 
 	operacion = '/'
 
-def Potencia():
+def potencia():
 
 	global numero_1
 	global operacion
@@ -179,7 +179,7 @@ tk.Button(ventana, text = '=', bg = '#A569BD', cursor = 'hand2', width = 5, acti
 tk.Button(ventana, text = 'B', bg = '#A569BD', cursor = 'hand2', width = 5, activebackground = 'pink', command = binario).grid(column = 1, row = 5, pady = 10)
 tk.Button(ventana, text = '√', bg = '#A569BD', cursor  = 'hand2', width = 5, activebackground = 'pink', command = radicacion).grid(column = 2, row = 5, pady = 10)
 tk.Button(ventana, text = '⌦', bg = '#A569BD', cursor  = 'hand2', width = 5, activebackground = 'pink', command = clean).grid(column = 3, row = 5, pady = 10)
-tk.Button(ventana, text = '^', bg = '#A569BD', cursor = 'hand2', width = 5, activebackground = 'pink', command = Potencia).grid(column = 4, row = 5, pady = 10)
+tk.Button(ventana, text = '^', bg = '#A569BD', cursor = 'hand2', width = 5, activebackground = 'pink', command = potencia).grid(column = 4, row = 5, pady = 10)
 
 class cerrar():
 
